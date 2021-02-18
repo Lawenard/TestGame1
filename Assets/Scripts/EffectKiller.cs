@@ -5,12 +5,14 @@ public class EffectKiller : MonoBehaviour
 {
     void Awake()
     {
-        StartCoroutine(Kill(GetComponent<ParticleSystem>().main.duration));
+        Destroy(gameObject, GetComponent<ParticleSystem>().main.duration);
+        //StartCoroutine(Kill(GetComponent<ParticleSystem>().main.duration));
     }
 
-    IEnumerator Kill(float delay)
-    {
-        yield return new WaitForSeconds(delay);
-        Destroy(gameObject);
-    }
+    //IEnumerator Kill(float delay)
+    //{
+    //    yield return new WaitForSeconds(delay);
+    //    // some code
+    //    Destroy(gameObject);
+    //}
 }
